@@ -1,0 +1,21 @@
+extends layout
+
+block content
+			h1 Current Submissions
+			for submission in theSubmissions
+				.video-submission-container
+					.video-submission
+						h3.video-title #{submission.title}
+						h4 By: #{submission.name}
+						p #{submission.description}
+						h4 #{submission.votes} Votes
+						h4 #{submission.data-id} Data Id
+						form(action="POST", method="/vote")
+							button(type="submit") Vote for Me
+						<iframe width="560", height="315", src="#{submission.youtubeUrl}", frameborder="0", allowfullscreen></iframe>
+			script(src="vote.js")
+
+
+
+	
+

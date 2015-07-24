@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	if (theSubmissions.length <= 8)
+		h1 Join the Contest!
+		form(action="/submit", method="POST")
+			div.input
+				span.label Name
+				input(type="text", name="videoName")
+			div.input
+				span.label URL to YouTube video
+				input(type="text", name="videoUrl")
+			div.input
+				span.label Video Title
+				input(type="text", name="videoTitle")
+			div.input
+				span.label Description
+				input(type="text", name="videoDescription")
+			input(type="submit")
+	
+	else
+		p We are no longer accepting submissions.
+	
